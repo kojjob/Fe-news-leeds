@@ -6,29 +6,28 @@ class AllTopics extends Component {
     topics: [],
     isLoading: true,
   };
-  
+
   componentDidMount() {
-    console.log('Mounting')
+    console.log("Mounting");
     api.getAllTopics().then((topics) => {
-      console.log(topics)
+      console.log(topics);
       this.setState({ topics, isLoading: false });
     });
   }
   render() {
-  
-    const { isLoading } = this.state;
+    const { topics, isLoading } = this.state;
     if (isLoading) return <p>Loading ...</p>;
-    const { slug, description } = this.state.topics;
     return (
-      <main className="blocks">
-        <p>All topics</p>
-        {this.topics.map((topic) => (
-          <div className="topic" key={slug}>
-            <h1 className="topic-name">{slug}</h1>
-            <p className="topic-num">{description}</p>
-          </div>
-        ))}
-      </main>
+      <ul>
+        {topics.map((topic) => {
+          return (
+            <li key={topic.slug}>
+              <h2>{topic.slug}</h2>
+              <p>{topic.description}</p>
+            </li>
+          );
+        })}
+      </ul>
     );
   }
 }

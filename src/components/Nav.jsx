@@ -1,19 +1,22 @@
+import React from "react";
+import { Link } from "@reach/router";
 
-import React from 'react';
-import {Link } from '@reach/router';
+import "./Nav.css";
 
-export default function Nav() {
+function Nav() {
   return (
-    <nav>
-      <Link to="/">
+    <nav className="Navbar">
+      <Link to="/" className="Nav-item">
         Home
       </Link>
-      <Link to="/articles">
-        Articles
+      <Link to="/articles" className="Nav-item">
+        Articles{" "}
       </Link>
-      <Link to="/topics">
+      <Link to="/topics" className="Nav-item">
         Topics
       </Link>
     </nav>
-  )
+  );
 }
+
+export default Nav;
