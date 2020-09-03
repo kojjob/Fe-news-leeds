@@ -8,9 +8,7 @@ class AllTopics extends Component {
   };
 
   componentDidMount() {
-    console.log("Mounting");
     api.getAllTopics().then((topics) => {
-      console.log(topics);
       this.setState({ topics, isLoading: false });
     });
   }

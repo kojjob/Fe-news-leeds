@@ -21,9 +21,10 @@ html {
 
 
 .main-articles {
-  width:  60%;
+  width: 60%;
   margin: 0 auto;
 }
+
 .article-card {
   width: 100%;
   color: #777;
@@ -32,7 +33,7 @@ html {
   margin: .6rem;
   padding: 2rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: .4rem;
 
   a {
@@ -40,51 +41,110 @@ html {
     color: #777777;
 
   }
-  .article-list-title, h3 {
+
+  .article-list-title,
+  h3 {
     font-size: .8rem;
     color: #979ea5;
   }
+
   .article-author {
     font-weight: 700;
     color: #444546;
     padding: 1rem;
     margin: .6rem 0;
-
-    display: block;
   }
 }
+
 .single-article {
   width: 80%;
   margin: 1rem auto;
   padding: 1rem;
   background: #ffffff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: .4rem;
+
   .article-lead {
     display: flex;
     margin-bottom: .5rem;
-    color: #777777;
+    color: #565252;
     justify-content: space-evenly;
   }
+
   .article-title {
-    font-size: .8rem;
-    text-align: center;
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-weight: 400;
   }
+
   .article-topic {
     font-size: .4rem;
     font-weight: 700;
     text-transform: uppercase;
-   align-self: flex-start;
-    background: #dae0e6;
+    align-self: center;
+    background: #648db7;
     border: none;
     padding: .2rem .3rem;
     border-radius: .8rem;
     color: #ffffff;
     outline: none;
   }
+
   .article-body {
     font-size: .7rem;
-    line-height: .1.2rem;
+    line-height: 1.2rem;
+    text-align: justify;
+    padding: .1rem 1rem;
+    color: #404043;
+    margin-bottom: 2rem;
+  }
+
+  .article-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: .2rem;
+    font-weight: 700;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  li {
+    list-style: none;
+  }
+
+  .comment-card {
+    display: flex;
+    flex-direction: column;
+    background: #f5f8f9;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: .2rem;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  .comment-stats {
+    display: flex;
+    font-weight: bold;
+    color: #2a89e9;
+    p {
+      margin-right: .3rem;
+      font-weight: 700;
+      font-size: .4rem;
+      text-align: justify;
+      text-transform: uppercase;
+    }
+  }
+  .comment-body {
+    font-size: .6rem;
+    font-weight: 200;
+    text-align: left;
+    margin-top: 0.2rem;
+    color: #141415;
   }
 }

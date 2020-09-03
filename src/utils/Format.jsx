@@ -1,6 +1,4 @@
-const dateFormat = (date) => {
-  const formatDate = new Date(date).toLocaleString();
-  return formatDate;
+export const dateFormat = (date) => {
+  const formatDate = new Date(date).toLocaleString().slice(0, 8);
+    return formatDate;
 };
-
-module.export = { dateFormat };

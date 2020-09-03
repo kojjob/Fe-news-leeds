@@ -1,12 +1,15 @@
 .loader {
-  border: 4px solid rgb(10, 60, 224);
-  border-top: 8px solid #74a2e7;
+  border: 1px solid rgb(8, 175, 235);
+  border-top: 1px solid #b00b0b;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
   animation: spin .8s linear infinite;
   margin: auto;
   margin-top: 1rem;
+  background: transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 @keyframes spin {

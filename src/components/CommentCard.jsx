@@ -8,16 +8,16 @@ const CommentCard = ({
   votes,
   comment_id,
   username,
-  removeCommentFromState,
 }) => {
   const formattedDate = dateFormat(created_at);
 
   return (
     <section className="comment-card">
-      <p>
-        {author} <span></span> {formattedDate}
-      </p>
-      <article>{body}</article>
+      <article className="comment-stats">
+        <p className="comment-author">{author}</p>
+        <p className="comment-date">{formattedDate}</p>
+      </article>
+      <article className="comment-body">{body}</article>
     </section>
   );
 };
