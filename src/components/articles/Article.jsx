@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import * as api from "../utils/api";
-import CommentList from "./CommentList";
+import * as api from "../../utils/api";
+import CommentList from "../comments/CommentList";
 
-import ErrorPage from "./ErrorPage";
-import Loader from "./Loader";
-import { dateFormat } from "../utils/Format";
+import ErrorPage from "../ErrorPage";
+import Loader from "../loader/Loader";
+import { dateFormat } from "../../utils/Format";
 
 
 class Article extends Component {

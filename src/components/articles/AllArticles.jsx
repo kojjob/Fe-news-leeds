@@ -1,10 +1,10 @@
 import React from "react";
-import * as api from "../utils/api";
-import Loader from "./Loader";
+import * as api from "../../utils/api";
+import Loader from "../loader/Loader";
 import ArticleCard from "./ArticleCard";
- import ErrorPage from './ErrorPage'
+ import ErrorPage from '../ErrorPage'
 
-import "../styled/Layout.scss";
+import "../../styled/Layout.scss";
 
 class AllArticles extends React.Component {
   state = {

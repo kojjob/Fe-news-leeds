@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import * as api from "../utils/api";
-import Loader from "./Loader";
-import ErrorPage from "./ErrorPage";
+import * as api from "../../utils/api";
+import Loader from "../loader/Loader";
+import ErrorPage from "../ErrorPage";
 import CommentCard from "./CommentCard";
+// import CommentForm from "./CommentForm";
 
 export default class CommentList extends Component {
   state = {
@@ -23,7 +24,13 @@ export default class CommentList extends Component {
       .then((comments) => {
         this.setState({ comments, isLoading: false, err: null });
       })
-      .catch(({response: { status, data: { msg },},}) => {
+      .catch(
+        ({
+          response: {
+            status,
+            data: { msg },
+          },
+        }) => {
           this.setState({ err: { status, msg }, isLoading: false });
         }
       );
@@ -34,19 +41,21 @@ export default class CommentList extends Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrorPage err={err} />;
     return (
-      <section className="comments-list">
-        <h3>Comments</h3>
-        <p>CommentForm</p>
-        <ul className="comment-list">
-          {comments.map(({ comment_id, ...comment }) => {
-            return (
-              <li key={comment_id}>
-                <CommentCard {...comment} comment_id={comment_id} />
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      <React.Fragment>
+        <section className="comments-list">
+          {/* <CommentForm /> */}
+          <h3>Comments</h3>
+          <ul className="comment-list">
+            {comments.map(({ comment_id, ...comment }) => {
+              return (
+                <li key={comment_id}>
+                  <CommentCard {...comment} comment_id={comment_id} />
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </React.Fragment>
     );
   }
 }

@@ -1,12 +1,11 @@
 import axios from 'axios'
 
-const axiosInstance = axios.create({
+const url = axios.create({
   baseURL: 'https://inews-api-nc.herokuapp.com/api',
 });
 
 export const getAllTopics = () => {
-  console.log('About to make a request')
-  return axiosInstance
+  return url
     .get('/topics')
     .then((topics) => {
       return topics.data.topics
@@ -17,14 +16,14 @@ export const getAllTopics = () => {
 }
 
 export const getAllArticles = (topic, sort_by) => {
-  return axiosInstance
+  return url
     .get('/articles', {params: {topic,sort_by}})
     .then((articles) => {
       return articles.data.articles
     })
 }
 export const getSingleArticle = (article_id) => {
-  return axiosInstance
+  return url
     .get(`articles/${article_id}`)
     .then(({
       data: {
@@ -34,7 +33,7 @@ export const getSingleArticle = (article_id) => {
 };
 
 export const getAllComments = (article_id, comments) => {
-  return axiosInstance
+  return url
     .get(`/articles/${article_id}/comments`)
     .then((comments) => {
       return comments.data.comments
@@ -42,13 +41,11 @@ export const getAllComments = (article_id, comments) => {
 }
 
 
-export const postComment = (bodyInput, article_id, user) => {
-  return axiosInstance
-    .post(`articles/${article_id}/comments`, {
-      username: user,
-      body: bodyInput.value,
-    })
-    .then(({ data: {comment}}) => {
-      return comment;
+export const postComment = (id, comment) => {
+  return url
+    .post(`/articles/${id}/comments`, comment)
+    .then(({data}) => {
+      //returns the data posted on top of the comments
+      return data[0];
     });
 };

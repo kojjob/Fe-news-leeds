@@ -14,10 +14,11 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
-  background: #dae0e6;
+  background: rgb(219, 224, 230);
   font-style: normal;
   font-weight: 400;
 }
+
 
 
 .main-articles {
@@ -57,9 +58,9 @@ html {
 }
 
 .single-article {
-  width: 80%;
+  width: 60%;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 1rem .6rem;
   background: #ffffff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -73,9 +74,9 @@ html {
   }
 
   .article-title {
-    font-size: .9rem;
+    font-size: .5rem;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   .article-topic {
@@ -110,41 +111,57 @@ html {
   }
 }
 
-.comment-list {
-  display: flex;
-  flex-direction: column;
-  li {
-    list-style: none;
+.comments-list {
+  h3 {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 200;
   }
-
-  .comment-card {
+  .comment-list {
     display: flex;
     flex-direction: column;
-    background: #f5f8f9;
-    margin-bottom: 1rem;
-    padding: 2rem;
-    border-radius: .2rem;
-    // justify-content: center;
-    // align-items: center;
-  }
 
-  .comment-stats {
-    display: flex;
-    font-weight: bold;
-    color: #2a89e9;
-    p {
-      margin-right: .3rem;
-      font-weight: 700;
-      font-size: .4rem;
-      text-align: justify;
-      text-transform: uppercase;
+    li {
+      list-style: none;
+    }
+
+
+    .comment-card {
+      display: flex;
+      flex-direction: column;
+      background: #f5f8f992;
+      margin-bottom: 1rem;
+      padding: 2rem;
+      border-radius: .2rem;
+    }
+
+    .comment-stats {
+      display: flex;
+      font-weight: bold;
+      color: #2a89e9;
+
+      p {
+        margin-right: .3rem;
+        font-weight: 700;
+        font-size: .4rem;
+        text-align: justify;
+        text-transform: uppercase;
+      }
+    }
+
+    .comment-body {
+      font-size: .6rem;
+      font-weight: 200;
+      text-align: left;
+      margin-top: 0.2rem;
+      color: #141415;
     }
   }
-  .comment-body {
-    font-size: .6rem;
-    font-weight: 200;
-    text-align: left;
-    margin-top: 0.2rem;
-    color: #141415;
-  }
+}
+
+.comment-form {
+  display: block;
+  
+  padding: 2rem;
 }

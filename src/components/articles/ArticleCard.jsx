@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-import {dateFormat} from '../utils/Format'
+import {dateFormat} from '../../utils/Format'
 
 
 const ArticleCard = ({
